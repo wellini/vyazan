@@ -268,6 +268,12 @@ menu {
     }
 }
 
+.article__quotedescription {
+    margin-left: 73px;
+    color: #979797;
+    margin-bottom: 40px;
+}
+
 .article__illustrationsroulette {
     font-weight: bold;
     margin-top: 50px;
