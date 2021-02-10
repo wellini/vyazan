@@ -1,0 +1,385 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+}
+
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+.header, .footer {
+    background-color: #ffba72;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 20px 20px 26px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logo__title {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.logo__descriptor {
+    font-size: .9em;
+    margin-top: 5px;
+}
+
+.menu {
+    line-height: calc(.9em + 1.4em + 5px);
+}
+
+.menu .menu__element {
+    padding: 0 13px;
+    display: inline-block;
+}
+
+.menu .menu__element,
+.menu .menu__element:link,
+.menu .menu__element:visited,
+.footer__phone,
+.footer__phone:link,
+.footer__phone:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu .menu__element.menu__element_active {
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+
+    .header {
+        display: inline-block;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .menu {
+        margin-top: 10px;
+    }
+
+    .menu .menu__element {
+        padding: 0 26px 0 0;
+        line-height: 1.2em;
+    }
+}
+
+.content {
+    text-align: center;
+}
+
+.content__wrapper {
+    display: inline-block;
+    width: 680px;
+    max-width: calc(100% - 20px);
+}
+
+@media (max-width: 900px) {
+    .content__wrapper {
+        width: 100%;
+    }
+}
+
+.article__cover {
+    position: relative;
+    text-align: center;
+    font-size: 0;
+    margin-top: 15px;
+}
+
+.article__cover img {
+    position: relative;
+    max-width: 100%;
+}
+
+.article__bodywrapper {
+    text-align: center;
+    background-color: white;
+    position: relative;
+}
+
+.article__body {
+    margin-top: 20px;
+    max-width: 100%;
+    display: inline-block;
+    text-align: left;
+}
+
+.article__h1 {
+    font-size: 2em;
+}
+
+.article__h2 {
+    margin-block-start: 2em;
+    margin-block-end: 0.83em;
+}
+
+.article__paragraph {
+    line-height: 1.3em;
+    font-size: 1.1em;
+}
+
+@media (max-width: 900px) {
+    .article__paragraph, .article__h2 {
+        width: 100%;
+    }
+}
+
+.article__ul {
+    list-style-type: none;
+}
+
+.article__li {
+    margin-top: 1em;
+}
+
+.imgroulette {
+    margin-top: 40px;
+}
+
+.imagecontainer {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+    width: 280px;
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    .imagecontainer {
+        margin-top: 30px;
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+.imgroulette__image {
+    max-width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 900px) {
+    .imgroulette__image {
+        width: 100%;
+        height: initial;
+    }
+}
+
+.imgroulette__image img {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    margin: auto;
+    top: -100px;
+    bottom: -100px;
+    left: -100px;
+    right: -100px;
+}
+
+@media (max-width: 900px) {
+    .imgroulette__image img {
+        width: 100%;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.imagecontainer__description {
+    font-size: .9em;
+    color: #979797;
+    margin-top: 10px;
+}
+
+.article__qoute {
+    margin: 30px 0;
+}
+
+@media (max-width: 900px) {
+    .article__qoute {
+        width: 100%;
+    }
+}
+
+.article__qoutesymbol {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 20px;
+}
+
+@media (max-width: 900px) {
+    .article__qoutesymbol {
+        width: 20px;
+        height: 20px;
+        padding: 0 10px;
+    }
+}
+
+.article__qoutesymbol.article__qoutesymbol_alt {
+    vertical-align: bottom;
+}
+
+.article__qoutebody {
+    display: inline-block;
+    width: calc(100% - 150px);
+    vertical-align: top;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+}
+
+@media (max-width: 900px) {
+    .article__qoutebody {
+        width: calc(100% - 90px);
+    }
+}
+
+.article__illustrationsroulette {
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.article__illustration {
+    display: inline-block;
+    width: 200px;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+@media (max-width: 900px) {
+    .article__illustration {
+        margin-right: 0;
+        width: initial;
+    }
+}
+
+.article__illustrationimg {
+    height: 200px;
+    width: 100%;
+}
+
+.article__illustrationimg img {
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 900px) {
+    .article__illustrationimg {
+        height: 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    .article__illustrationimg img {
+        height: 100%;
+        width: initial;
+    }
+}
+
+.article__illustrationdescription {
+    width: 100%;
+    display: inline-block;
+    margin: 15px 0 0 0;
+    font-size: .8em;
+}
+
+.article__illustration_up .article__illustrationdescription {
+    margin: 0 0 15px 0;
+}
+
+.article__catalog {
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+@media (max-width: 900px) {
+    .article__catalogitems {
+        overflow-x: scroll;
+        word-wrap: none;
+        white-space: nowrap;
+    }
+}
+
+.article__catalogitem {
+    width: 200px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+    word-wrap: normal;
+    white-space: normal;
+}
+
+.article__catalogitemdescription {
+    margin: 10px 0 0 0;
+    font-size: .8em;
+}
+
+.article__catalogitemimg {
+    width: 100%;
+    height: 250px;
+}
+
+.article__catalogitemimg img {
+    width: 100%;
+}
+
+.article__bigillustration {
+    margin-top: 50px;
+}
+
+.article__bigillustration img {
+    width: 100%;
+}
+
+.article__bigillustrationdescription {
+    font-size: .8em;
+}
+
+.footer {
+    margin-top: 100px;
+}
+
+.footer__phone {
+    line-height: calc(.9em + 1.4em + 5px);
+}
+
+@media (max-width: 900px) {
+    .footer {
+        display: inline-block;
+    }
+}
