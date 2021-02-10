@@ -283,6 +283,7 @@ menu {
 .article__illustrationsroulette {
     font-weight: bold;
     margin-top: 50px;
+    font-size: 1.1em;
 }
 
 .article__illustration {
@@ -337,6 +338,7 @@ menu {
 .article__catalog {
     font-weight: bold;
     margin-top: 50px;
+    font-size: 1.1em;
 }
 
 @media (max-width: 900px) {
