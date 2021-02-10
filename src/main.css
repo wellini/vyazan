@@ -274,6 +274,12 @@ menu {
     margin-bottom: 40px;
 }
 
+@media (max-width: 900px) {
+    .article__quotedescription {
+        margin-left: 45px;
+    }
+}
+
 .article__illustrationsroulette {
     font-weight: bold;
     margin-top: 50px;
