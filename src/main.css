@@ -388,6 +388,7 @@ li {
 .article__catalogitemdescription {
     margin: 10px 0 0 0;
     font-size: .8em;
+    font-weight: normal;
 }
 
 .article__catalogitemimg {
@@ -408,7 +409,8 @@ li {
 }
 
 .article__bigillustrationdescription {
-    font-size: .8em;
+    margin-top: 15px;
+    color: #979797;
 }
 
 footer {
