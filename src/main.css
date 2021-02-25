@@ -13,6 +13,7 @@ body {
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     sans-serif;
+    text-align: center;
 }
 
 menu {
@@ -20,16 +21,17 @@ menu {
     padding: 0;
 }
 
-.header, .footer {
+header, footer {
     background-color: #ffba72;
     width: 100%;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 20px 20px 20px 26px;
+    padding: 20px 26px;
+    text-align: left;
 }
 
-.header {
+header {
     position: sticky;
     top: 0;
     z-index: 10;
@@ -41,26 +43,39 @@ menu {
 
 .logo__title {
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.8em;
+}
+
+@media (max-width: 900px) {
+    .logo__title {
+        font-size: 1.5em;
+    }
 }
 
 .logo__descriptor {
-    font-size: .9em;
+    font-size: 1.2em;
     margin-top: 5px;
 }
 
-.menu {
-    line-height: calc(.9em + 1.4em + 5px);
+@media (max-width: 900px) {
+    .logo__descriptor {
+        font-size: initial;
+    }
 }
 
-.menu .menu__element {
+menu {
+    line-height: calc(1.8em + 1.8em + 5px);
+    font-size: 1.2em;
+}
+
+menu .menu__element {
     padding: 0 13px;
     display: inline-block;
 }
 
-.menu .menu__element,
-.menu .menu__element:link,
-.menu .menu__element:visited,
+menu .menu__element,
+menu .menu__element:link,
+menu .menu__element:visited,
 .footer__phone,
 .footer__phone:link,
 .footer__phone:visited {
@@ -68,43 +83,42 @@ menu {
     text-decoration: none;
 }
 
-.menu .menu__element.menu__element_active {
+menu .menu__element.menu__element_active {
     font-weight: bold;
 }
 
 @media (max-width: 900px) {
 
-    .header {
+    header {
         display: inline-block;
-        padding: 10px 15px;
+        padding: 15px;
     }
 
     .logo {
         width: 100%;
     }
 
-    .menu {
+    menu {
         margin-top: 10px;
+        line-height: initial;
+        font-size: initial;
     }
 
-    .menu .menu__element {
+    menu .menu__element {
         padding: 0 26px 0 0;
-        line-height: 1.2em;
+        margin-top: 10px;
+        display: inline-block;
     }
 }
 
-.content {
-    text-align: center;
-}
-
-.content__wrapper {
+article {
     display: inline-block;
     width: 680px;
     max-width: calc(100% - 20px);
 }
 
 @media (max-width: 900px) {
-    .content__wrapper {
+    article {
         width: 100%;
     }
 }
@@ -121,12 +135,6 @@ menu {
     max-width: 100%;
 }
 
-.article__bodywrapper {
-    text-align: center;
-    background-color: white;
-    position: relative;
-}
-
 .article__body {
     margin-top: 20px;
     max-width: 100%;
@@ -134,42 +142,50 @@ menu {
     text-align: left;
 }
 
-.article__h1 {
-    font-size: 2em;
+h1 {
+    font-size: 2.1em;
+    line-height: 1.5em;
 }
 
-.article__h2 {
+h2 {
     margin-block-start: 2em;
     margin-block-end: 0.83em;
+    line-height: 1.4em;
 }
 
-.article__paragraph {
+p {
     line-height: 1.3em;
     font-size: 1.1em;
 }
 
 @media (max-width: 900px) {
-    .article__paragraph, .article__h2 {
+    p, h2 {
         width: 100%;
     }
 }
 
-.article__ul {
+ul {
     list-style-type: none;
 }
 
-.article__li {
+li {
     margin-top: 1em;
 }
 
 .imgroulette {
     margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 900px) {
+    .imgroulette {
+        display: block;
+    }
 }
 
 .imagecontainer {
     display: inline-block;
-    margin-right: 20px;
-    vertical-align: top;
     width: 280px;
     max-width: 100%;
 }
@@ -178,6 +194,7 @@ menu {
     .imagecontainer {
         margin-top: 30px;
         margin-right: 0;
+        min-width: 200px;
         width: 100%;
     }
 }
@@ -234,14 +251,6 @@ menu {
     }
 }
 
-.article__qoutesymbol {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0 20px;
-}
-
 @media (max-width: 900px) {
     .article__qoutesymbol {
         width: 20px;
@@ -255,29 +264,43 @@ menu {
 }
 
 .article__qoutebody {
-    display: inline-block;
-    width: calc(100% - 150px);
-    vertical-align: top;
+    display: block;
     font-family: 'PT Serif', serif;
-    font-size: 1.2em;
+    line-height: 1.5em;
+    position: relative;
 }
 
-@media (max-width: 900px) {
-    .article__qoutebody {
-        width: calc(100% - 90px);
-    }
+.article__qoutebody::before, .article__qoutebody::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.article__qoutebody::before {
+    background-image: url("images/quote.jpg");
+}
+
+.article__qoutebody::after {
+    background-image: url("images/quote-alt.jpg");
+    vertical-align: bottom;
+}
+
+.article__qoutebodybody {
+    display: inline-block;
+    width: calc(100% - 140px);
 }
 
 .article__quotedescription {
-    margin-left: 73px;
+    margin-left: 70px;
     color: #979797;
+    margin-top: 20px;
     margin-bottom: 40px;
-}
-
-@media (max-width: 900px) {
-    .article__quotedescription {
-        margin-left: 45px;
-    }
 }
 
 .article__illustrationsroulette {
@@ -286,10 +309,14 @@ menu {
     font-size: 1.1em;
 }
 
+.article__illustrations {
+    display: flex;
+    justify-content: space-around;
+}
+
 .article__illustration {
     display: inline-block;
-    width: 200px;
-    margin-right: 10px;
+    max-width: 200px;
     vertical-align: top;
 }
 
@@ -384,7 +411,7 @@ menu {
     font-size: .8em;
 }
 
-.footer {
+footer {
     margin-top: 100px;
 }
 
@@ -393,7 +420,7 @@ menu {
 }
 
 @media (max-width: 900px) {
-    .footer {
+    footer {
         display: inline-block;
     }
 }
